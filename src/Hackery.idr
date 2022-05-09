@@ -23,7 +23,6 @@ then_ : (impl : IfThenElse condT)
 then_ (MkIf cond) thenBody = MkThen cond thenBody
 
 
---infixr 5 `else_`
 else_ : (impl : IfThenElse condT)
   => Then condT (DeconstructThen @{impl}) (DeconstructElse @{impl}) t
   -> (DeconstructElse @{impl} -> t) -> t
